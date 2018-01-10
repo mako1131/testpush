@@ -21,10 +21,10 @@
         Push.create('Hello World!', {
             body: 'I am body',
             serviceWorker: '/testpush/serviceWorker.min.js',
-            link: 'http://www.google.com',
+            link: '/particular',
             onClick: function () {
                 window.focus();
-                window.open('http://www.google.com')
+                window.open('/particular')
                 this.close();
             }
         })
