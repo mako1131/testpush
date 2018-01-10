@@ -6,7 +6,7 @@
     <title>Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
-    <script src="serviceWorker.min.js"></script>    
+    <!-- <script src="serviceWorker.min.js"></script>     -->
 </head>
 <body>
     <p>Hello</p>
@@ -16,12 +16,20 @@
 <script src="main.js"></script>
 
 <script>
-     Push.create('Hello World!')
+     //Push.create('Hello World!')
     setInterval( _=> (
-        Push.create('Hello World!')
+        Push.create('Hello World!', {
+            body: 'I am body',
+            serviceWorker: '/testpush/serviceWorker.min.js',
+            onClick: function () {
+                window.focus();
+                window.open('http://www.google.com')
+                this.close();
+            }
+        })
     ), 30000 )
     
 
-    var n = new Notification('classic');
+    //var n = new Notification('classic');
 </script>
 </html>
