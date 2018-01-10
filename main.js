@@ -13,6 +13,8 @@ function demo() {
     });
 }
 
-$(document).ready(function () {
-    $("#demo_button").click(demo);
-});
+document.getElementById('demo_button').addEventListener('click', demo)
+
+// $(document).ready(function () {
+//     $("#demo_button").click(demo);
+// });
