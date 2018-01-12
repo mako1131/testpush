@@ -23,9 +23,11 @@
     function init() {
         var button = document.getElementById('demo_button')
         if (window.Notification && window.Notification.permission && window.Notification.permission == 'default') { //if permission = default, show button
+            button.style.display = "inline"
             button.addEventListener('click', function (e) { //on button click ask for permission and hide button
                 e.preventDefault();
                 Push.Permission.request(onGranted, onDenied);
+                button.style.display = "none"
 
                 return false;
             })
